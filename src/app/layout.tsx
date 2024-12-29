@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,128 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
+        {/* header */}
+        <header className="lg:px-16 px-4 bg-white flex flex-wrap items-center shadow-md">
+          <div className="flex-1 flex justify-between items-center">
+            <Image
+              aria-hidden
+              src="/logo.png"
+              alt="Globe icon"
+              width={200}
+              height={0}
+            />
+          </div>
+
+          <label htmlFor="menu-toggle" className="pointer-cursor md:hidden block">
+            <svg className="fill-current text-gray-900"
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+              <title>menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </label>
+          <input className="hidden" type="checkbox" id="menu-toggle" />
+
+          <div className="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+            <nav>
+              <ul className="md:flex text-textGrey items-center justify-between text-base pt-4 md:pt-0 text">
+                <li><a className="md:p-5 px-3 block" href="#">Home</a></li>
+                <li><a className="md:p-5 px-3 block" href="#">Our Services</a></li>
+                <li><a className="md:p-5 px-3 block" href="#">Blog</a></li>
+                <li><a className="md:p-5 px-3 block" href="#">Contact Us</a></li>
+                <li><a className="md:p-5 px-3 block" href="#">About Us</a></li>
+                <li>
+                  <Button className="bg-[#FFA229] hover:bg-[#FFA229]">Talk an Expert</Button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+
+
         {children}
+
+        {/* footer */}
+        <footer className="bg-[#011B5B] w-full">
+          <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
+            <div>
+              <p className="text-[#AAB5CD] text-sm my-2">
+                Design outstanding interfaces with the advance Figma designs in a matter of minutes
+              </p>
+              <p>
+                <img src="Social icons.png" className="w-[100px] "/>
+              </p>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-[#FFA229] uppercase ">Company</h2>
+              <ul className="text-[#AAB5CD] text-sm">
+                <li className="m-1">
+                  <a href="#" className=" hover:underline">About</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Careers</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Brand Center</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-[#FFA229] uppercase ">Company</h2>
+              <ul className="text-[#AAB5CD] text-sm">
+                <li className="m-1">
+                  <a href="#" className=" hover:underline">About</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Careers</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Brand Center</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-[#FFA229] uppercase ">Company</h2>
+              <ul className="text-[#AAB5CD] text-sm">
+                <li className="m-1">
+                  <a href="#" className=" hover:underline">About</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Careers</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Brand Center</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-[#FFA229] uppercase ">Company</h2>
+              <ul className="text-[#AAB5CD] text-sm">
+                <li className="m-1">
+                  <a href="#" className=" hover:underline">About</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Careers</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Brand Center</a>
+                </li>
+                <li className="m-1">
+                  <a href="#" className="hover:underline">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
