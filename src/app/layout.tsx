@@ -20,8 +20,9 @@ export default function RootLayout({
       <body      >
 
         {/* header */}
-        <header className="lg:px-16 px-4 bg-white flex flex-wrap items-center shadow-md">
-          <div className="flex-1 flex justify-between items-center">
+        <header className="lg:px-16 px-4 bg-white flex items-center justify-between shadow-md">
+          {/* Logo Section */}
+          <div className="flex items-center">
             <Image
               aria-hidden
               src="/logo.png"
@@ -31,30 +32,73 @@ export default function RootLayout({
             />
           </div>
 
-          <label htmlFor="menu-toggle" className="pointer-cursor md:hidden block">
-            <svg className="fill-current text-gray-900"
-              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+          {/* Mobile Menu Toggle Button */}
+          <label
+            htmlFor="menu-toggle"
+            className="pointer-cursor md:hidden block cursor-pointer"
+          >
+            <svg
+              className="fill-current text-gray-900"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+            >
               <title>menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </label>
-          <input className="hidden" type="checkbox" id="menu-toggle" />
 
-          <div className="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+          {/* Hidden Checkbox to Control Toggle */}
+          <input
+            className="hidden peer"
+            type="checkbox"
+            id="menu-toggle"
+          />
+
+          {/* Navigation Menu */}
+          <div
+            className="hidden peer-checked:block md:flex md:items-center md:w-auto w-full"
+            id="menu"
+            role="menu"
+          >
             <nav>
-              <ul className="md:flex text-textGrey items-center justify-between text-base pt-4 md:pt-0 text">
-                <li><a className="md:p-5 px-3 block" href="#">Home</a></li>
-                <li><a className="md:p-5 px-3 block" href="#">Our Services</a></li>
-                <li><a className="md:p-5 px-3 block" href="#">Blog</a></li>
-                <li><a className="md:p-5 px-3 block" href="#">Contact Us</a></li>
-                <li><a className="md:p-5 px-3 block" href="#">About Us</a></li>
+              <ul className="md:flex block text-textGrey items-center justify-between text-base pt-4 md:pt-0">
                 <li>
-                  <Button className="bg-[#FFA229] hover:bg-[#FFA229]">Talk an Expert</Button>
+                  <a className="md:p-5 px-3 block" href="#">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a className="md:p-5 px-3 block" href="#">
+                    Our Services
+                  </a>
+                </li>
+                <li>
+                  <a className="md:p-5 px-3 block" href="#">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a className="md:p-5 px-3 block" href="#">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a className="md:p-5 px-3 block" href="#">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <Button className="bg-[#FFA229] hover:bg-[#FFA229]">
+                    Talk an Expert
+                  </Button>
                 </li>
               </ul>
             </nav>
           </div>
         </header>
+
 
 
         {children}
