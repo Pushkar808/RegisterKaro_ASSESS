@@ -96,7 +96,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="h-full w-full order-1 md:order-2 py-5">
-            <img src="/about.png" />
+            <img src="About.png" />
           </div>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default async function Home() {
           <div className="text-2xl font-bold my-1">Our Happy Clients</div>
           <div className="text-center text-sm text-[#666666] my-1">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</div>
           <div>
-            <img src="/pagination.png" className="w-full h-full" />
+            <img src="Pagination.png" className="w-full h-full" />
           </div>
         </div>
       </section>
