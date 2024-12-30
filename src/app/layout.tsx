@@ -4,15 +4,6 @@ import "./globals.css";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body      >
 
         {/* header */}
         <header className="lg:px-16 px-4 bg-white flex flex-wrap items-center shadow-md">
@@ -73,12 +62,12 @@ export default function RootLayout({
         {/* footer */}
         <footer className="bg-[#011B5B] w-full">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
-            <div>
+            <div className="">
               <p className="text-[#AAB5CD] text-sm my-2">
                 Design outstanding interfaces with the advance Figma designs in a matter of minutes
               </p>
               <p>
-                <img src="Social icons.png" className="w-[100px] "/>
+                <img src="Social icons.png" className="w-[100px] " />
               </p>
             </div>
             <div>
@@ -132,7 +121,7 @@ export default function RootLayout({
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="md:col-span-1 col-span-2 md:text-left text-center">
               <h2 className="mb-6 text-sm font-semibold text-[#FFA229] uppercase ">Company</h2>
               <ul className="text-[#AAB5CD] text-sm">
                 <li className="m-1">

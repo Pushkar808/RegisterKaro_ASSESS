@@ -6,17 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Input } from "@/components/ui/input";
 import pool from "@/database/config";
-import Autoplay from "embla-carousel-autoplay";
-import { GetStaticProps } from "next";
 import Image from "next/image";
 import React from "react";
 import { FaCheck, FaFileAlt } from "react-icons/fa";
 
-export default async function Home({ params }: {
-  params: Promise<any>
-}) {
-  const companyData = await params;
-  console.log(companyData)
+export default async function Home() {
   const images = ["/Brand (1).png", "/Brand (2).png", "/Brand (3).png", "/Brand (4).png", "/Brand (5).png",]
   const services = [
     { imageUrl: "/service1.svg", heading: "Company Formation", description: "Build web-based solutions that enhance customer experience." },
@@ -28,6 +22,15 @@ export default async function Home({ params }: {
 
   ]
 
+  try {
+    const client = await pool.connect();
+    console.log("connected")
+    const result = await client.query("Select * from public.companies")
+    console.log("fetchedData", result.rows)
+    const data = result?.rows;
+  } catch (error) {
+    console.log(error)
+  }
 
   return (
     <div className="">
@@ -43,7 +46,7 @@ export default async function Home({ params }: {
               <Button className='bg-[#011B5B] hover:bg-[#011B5B] md:w-[200px] font-medium p-5 rounded-sm'>Talk An Expert</Button>
             </div>
           </div>
-          <div className='w-[42%] pt-5'><Image alt="banner" src="/Group-1.png" width={100} height={100} className='w-full h-full' /></div>
+          <div className='w-[42%] pt-5 md:block hidden'><Image alt="banner" src="/Group-1.png" width={100} height={100} className='w-full h-full' /></div>
         </div>
       </section>
 
@@ -53,7 +56,7 @@ export default async function Home({ params }: {
           <div>
             <h5 className="text-[22px] font-bold p-5">Trusted Over 100+ Startups and freelance Business</h5>
           </div>
-          <div className="flex gap-10 scroll-x-auto p-5">
+          <div className="flex gap-10 scroll-x-auto p-5 md:flex-row flex-col">
             {images.map((image, index) => {
               return (
                 <img src={image} alt="BrandImg" key={index} />
@@ -85,8 +88,8 @@ export default async function Home({ params }: {
 
       {/* About Section */}
       <section className="md:px-[70px]">
-        <div className="flex justify-between w-full">
-          <div className="px-5 flex flex-col gap-6 pb-[100px] w-full">
+        <div className="flex justify-between w-full md:flex-row flex-col">
+          <div className="px-5 flex flex-col gap-6 pb-[100px] w-full md:order-1 order-2">
             <div className="uppercase text-sm text-[#FFA229]">welcome to registerkaro.in</div>
             <div className="text-3xl font-bold">About <span className="text-[#FFA229]">Register Karo</span></div>
             <div>
@@ -104,7 +107,7 @@ export default async function Home({ params }: {
               <Button className="bg-[#011B5B] hover:bg-[#011B5B] p-6 rounded-sm">Learn More</Button>
             </div>
           </div>
-          <div className="h-full w-full">
+          <div className="h-full w-full order-1 md:order-2 py-5">
             <img src="/about.png" />
           </div>
         </div>
@@ -150,7 +153,11 @@ export default async function Home({ params }: {
       </section>
 
       <section className="md:px-[70px] bg-[#FFA229] py-[60px]">
-        <div className="flex w-full gap-[47px] justify-center">
+        <div className="flex w-full gap-[47px] justify-center md:flex-row flex-col items-center">
+          <div className="flex items-center gap-2 font-semibold">
+            <div className="rounded-full bg-amber-500 text-white p-3 text-center"><FaFileAlt /></div>
+            <div>Executive will Process Application</div>
+          </div>
           <div className="flex items-center gap-2 font-semibold">
             <div className="rounded-full bg-red-500 text-white p-3 text-center"><FaFileAlt /></div>
             <div>Fill up Application Form</div>
@@ -158,10 +165,6 @@ export default async function Home({ params }: {
           <div className="flex items-center gap-2 font-semibold">
             <div className="rounded-full bg-green-500 text-white p-3 text-center"><FaFileAlt /></div>
             <div>Make Online Payment</div>
-          </div>
-          <div className="flex items-center gap-2 font-semibold">
-            <div className="rounded-full bg-amber-500 text-white p-3 text-center"><FaFileAlt /></div>
-            <div>Executive will Process Application</div>
           </div>
           <div className="flex items-center gap-2 font-semibold">
             <div className="rounded-full bg-gray-500 text-white p-3 text-center"><FaFileAlt /></div>
@@ -264,8 +267,8 @@ export default async function Home({ params }: {
 
 
       <section className="md:px-[70px]">
-        <div className="flex justify-evenly py-10 gap-2">
-          <img src="/Company logo.png" />
+        <div className="flex md:flex-row flex-col justify-evenly items-center py-10 gap-2 ">
+          <img src="/Company logo.png" width={80} />
           <img src="/Company logo 1.png" />
           <img src="/Company logo 2.png" />
           <img src="/Company logo 3.png" />
@@ -275,22 +278,4 @@ export default async function Home({ params }: {
       </section>
     </div>
   );
-}
-
-// to pre-load data on server-side
-export async function generateStaticParams() {
-  try {
-    const client = await pool.connect();
-    console.log("connected")
-    const result = await client.query("Select * from public.companies")
-    console.log("fetchedData", result.rows)
-    const data = result?.rows;
-    return {
-      props: {
-        data,
-      },
-    }
-  } catch (error) {
-    console.log(error)
-  }
 }
