@@ -11,7 +11,7 @@ const CompanyCard = async () => {
         const result = await client.query("Select * from public.companies")
         console.log("fetchedData", result.rows)
         data = result?.rows;
-        console.log(data)
+        console.log(data);
     } catch (error) {
         console.log(error)
     }
