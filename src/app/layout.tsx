@@ -20,7 +20,7 @@ export default function RootLayout({
       <body      >
 
         {/* header */}
-        <header className="lg:px-16 px-4 bg-white flex items-center justify-between shadow-md">
+        <header className="lg:px-16 px-4 bg-white flex items-center justify-between shadow-md flex-wrap">
           {/* Logo Section */}
           <div className="flex items-center">
             <Image
@@ -62,30 +62,29 @@ export default function RootLayout({
             id="menu"
             role="menu"
           >
-            <nav>
               <ul className="md:flex block text-textGrey items-center justify-between text-base pt-4 md:pt-0">
                 <li>
-                  <a className="md:p-5 px-3 block" href="#">
+                  <a className="md:p-5 p-1 block" href="#">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a className="md:p-5 px-3 block" href="#">
+                  <a className="md:p-5 p-1 block" href="#">
                     Our Services
                   </a>
                 </li>
                 <li>
-                  <a className="md:p-5 px-3 block" href="#">
+                  <a className="md:p-5 p-1 block" href="#">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a className="md:p-5 px-3 block" href="#">
+                  <a className="md:p-5 p-1 block" href="#">
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a className="md:p-5 px-3 block" href="#">
+                  <a className="md:p-5 p-1 block" href="#">
                     About Us
                   </a>
                 </li>
@@ -95,7 +94,6 @@ export default function RootLayout({
                   </Button>
                 </li>
               </ul>
-            </nav>
           </div>
         </header>
 

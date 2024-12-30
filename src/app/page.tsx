@@ -67,8 +67,8 @@ export default async function Home() {
       </section>
 
       {/* service section */}
-      <section className="md:px-[70px]">
-        <div className="w-full flex flex-col items-center px-[70px] pt-[50px] pb-[100px]">
+      <section className="md:px-[70px] p-5">
+        <div className="w-full flex flex-col items-center md:px-[70px] pt-[50px] pb-[100px]">
           <div className="uppercase text-sm text-[#FFA229] my-1">welcome to registerkaro.in</div>
           <div className="text-2xl font-bold my-1">Explore our Services</div>
           <div className="grid md:grid-cols-3 my-10 gap-10">
@@ -114,8 +114,8 @@ export default async function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="md:p-[70px] bg-[#011B5B] text-white ">
-        <div className="flex items-center ">
+      <section className="md:p-[70px] p-5 bg-[#011B5B] text-white ">
+        <div className="flex md:flex-row flex-col gap-4 items-center ">
           <div className="flex flex-col gap-6 w-full">
             <div className="text-3xl font-bold">Our Video Introductions</div>
             <div className="text-sm">Velit purus egestas tellus phasellus. Mattis eget sed faucibus magna vulputate pellentesque a diam tincidunt apis dui.</div>
@@ -143,7 +143,7 @@ export default async function Home() {
       {/* Cleint Section */}
 
       <section className="">
-        <div className="w-full flex flex-col items-center px-[70px] pt-[50px] pb-[100px]">
+        <div className="w-full flex flex-col items-center md:px-[70px] p-5 pt-[50px] pb-[100px]">
           <div className="text-2xl font-bold my-1">Our Happy Clients</div>
           <div className="text-center text-sm text-[#666666] my-1">Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</div>
           <div>
@@ -174,8 +174,8 @@ export default async function Home() {
       </section>
 
       {/* blogs section */}
-      <section className="md:px-[70px]">
-        <div className="w-full flex flex-col items-center px-[70px] pt-[50px] pb-[50px]">
+      <section className="md:px-[70px] p-5">
+        <div className="w-full flex flex-col items-center md:px-[70px] pt-[50px] pb-[50px]">
           <div className="uppercase text-sm text-[#FFA229] my-1">EXPLORE OUR BLOGS</div>
           <div className="text-2xl font-bold my-1">Accelerate Digital Transformation</div>
           <div className="grid md:grid-cols-3 my-10 gap-10">
@@ -193,8 +193,8 @@ export default async function Home() {
       </section>
 
       {/* blogs section */}
-      <section className="md:px-[70px] bg-[#011B5B]">
-        <div className="w-full flex flex-col px-[70px] py-[30px]">
+      <section className="md:px-[70px] p-5 bg-[#011B5B]">
+        <div className="w-full flex flex-col md:px-[70px] py-[30px]">
           <div className="text-2xl font-bold my-3 text-white">What peoples says about us</div>
           <div >
             <Carousel
@@ -230,11 +230,11 @@ export default async function Home() {
       </section>
 
 
-      <section className="md:px-[70px] bg-gradient-to-r from-[#c28c48]  to-[#2f5795] text-white">
-        <div className="w-full flex flex-col items-center px-[70px] py-[30px]">
+      <section className="md:px-[70px] p-5 bg-gradient-to-r from-[#c28c48]  to-[#2f5795] text-white">
+        <div className="w-full flex flex-col items-center md:px-[70px] py-[30px]">
           <div className="uppercase text-sm my-1">1% of the industry</div>
           <div className="text-2xl font-bold my-1">Welcome to your new digital reality. Now.</div>
-          <div className="flex w-1/2 my-4">
+          <div className="flex md:w-1/2 my-4">
             <Input type="email" placeholder="Email" />
             <Button type="submit" className="text-white bg-[#FFA229] hover:bg-[#FFA229] mx-1">Subscribe</Button>
           </div>
