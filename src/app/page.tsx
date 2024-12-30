@@ -11,7 +11,6 @@ import React from "react";
 import { FaCheck, FaFileAlt } from "react-icons/fa";
 
 export default async function Home() {
-  const images = ["/Brand (1).png", "/Brand (2).png", "/Brand (3).png", "/Brand (4).png", "/Brand (5).png",]
   const services = [
     { imageUrl: "/service1.svg", heading: "Company Formation", description: "Build web-based solutions that enhance customer experience." },
     { imageUrl: "/service2.svg", heading: "Company Secretarial Services", description: "Make data-driven decisions and utilize technology to reach business goals." },
@@ -19,7 +18,6 @@ export default async function Home() {
     { imageUrl: "/service4.png", heading: "Annual Compliance Services", description: "Turn your ideas into modern products with our design experts." },
     { imageUrl: "/service5.png", heading: "Payroll Services", description: "Expand your business across the globe with minimal effort." },
     { imageUrl: "/service6.png", heading: "Bookkeeping Services", description: "Steering user behaviours with creative design, data insights & technology." },
-
   ]
 
 
@@ -62,7 +60,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 my-10 gap-10">
             {services.map((service, index) => {
               return (
-                <ServiceCard {...service} />
+                <ServiceCard {...service} key={index} />
               )
             })}
 

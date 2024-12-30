@@ -17,8 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body      >
-
+      <body>
         {/* header */}
         <header className="lg:px-16 px-4 bg-white flex items-center justify-between shadow-md flex-wrap">
           {/* Logo Section */}
@@ -62,38 +61,38 @@ export default function RootLayout({
             id="menu"
             role="menu"
           >
-              <ul className="md:flex block text-textGrey items-center justify-between text-base pt-4 md:pt-0">
-                <li>
-                  <a className="md:p-5 p-1 block" href="#">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a className="md:p-5 p-1 block" href="#">
-                    Our Services
-                  </a>
-                </li>
-                <li>
-                  <a className="md:p-5 p-1 block" href="#">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a className="md:p-5 p-1 block" href="#">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a className="md:p-5 p-1 block" href="#">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <Button className="bg-[#FFA229] hover:bg-[#FFA229]">
-                    Talk an Expert
-                  </Button>
-                </li>
-              </ul>
+            <ul className="md:flex block text-textGrey items-center justify-between text-base pt-4 md:pt-0">
+              <li>
+                <a className="md:p-5 p-1 block" href="#">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="md:p-5 p-1 block" href="#">
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a className="md:p-5 p-1 block" href="#">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a className="md:p-5 p-1 block" href="#">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a className="md:p-5 p-1 block" href="#">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <Button className="bg-[#FFA229] hover:bg-[#FFA229]">
+                  Talk an Expert
+                </Button>
+              </li>
+            </ul>
           </div>
         </header>
 
