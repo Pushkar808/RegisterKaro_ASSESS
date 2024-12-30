@@ -1,11 +1,11 @@
 import BlogCard from "@/components/blogCard";
+import CompanyCard from "@/components/companyCard";
 import FeedCard from "@/components/feedCard";
 import Metrics from "@/components/Metrics";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Input } from "@/components/ui/input";
-import pool from "@/database/config";
 import Image from "next/image";
 import React from "react";
 import { FaCheck, FaFileAlt } from "react-icons/fa";
@@ -22,15 +22,7 @@ export default async function Home() {
 
   ]
 
-  try {
-    const client = await pool.connect();
-    console.log("connected")
-    const result = await client.query("Select * from public.companies")
-    console.log("fetchedData", result.rows)
-    const data = result?.rows;
-  } catch (error) {
-    console.log(error)
-  }
+
 
   return (
     <div className="">
@@ -57,17 +49,13 @@ export default async function Home() {
             <h5 className="text-[22px] font-bold p-5">Trusted Over 100+ Startups and freelance Business</h5>
           </div>
           <div className="flex gap-10 scroll-x-auto p-5 md:flex-row flex-col">
-            {images.map((image, index) => {
-              return (
-                <img src={image} alt="BrandImg" key={index} />
-              )
-            })}
+            <CompanyCard />
           </div>
         </div>
       </section>
 
       {/* service section */}
-      <section className="md:px-[70px] p-5">
+      <section className="md:px-[70px] p-5 border-t-2 border-gray-200">
         <div className="w-full flex flex-col items-center md:px-[70px] pt-[50px] pb-[100px]">
           <div className="uppercase text-sm text-[#FFA229] my-1">welcome to registerkaro.in</div>
           <div className="text-2xl font-bold my-1">Explore our Services</div>
